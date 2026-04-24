@@ -1,0 +1,50 @@
+{
+  "project_title": "Automated Maintenance Request Triage",
+  "owner": "Demo Intern",
+  "division": "Property Management",
+  "date": "2026-06-15",
+  "status": "in_progress",
+  "sections": {
+    "1_background": {
+      "title": "Background / Context",
+      "subtitle": "Why does this project exist? Who is affected?",
+      "content": "Patry's property management division handles ~50 tenant maintenance requests per week across our portfolio.\n\nRequests arrive via email in free-text form — tenants describe issues in their own words, often with incomplete information.\n\nThis process directly impacts tenant satisfaction, contractor response times, and the property management team's capacity.\n\nThis project supports Patry's Summer 2026 AI mandate to deliver seven-figure measurable value across all divisions."
+    },
+    "2_current_condition": {
+      "title": "Current Condition",
+      "subtitle": "How does the process work today? Use data, not opinions.",
+      "content": "Current workflow (fully manual):\n1. Staff member reads each email\n2. Manually categorizes by urgency (Emergency / Standard) and trade type\n3. Looks up the correct contractor in a directory spreadsheet\n4. Sends a follow-up email to the assigned contractor\n5. Logs the outcome in a tracking spreadsheet\n\nData:\n• 6–8 hours/week of staff time on this process\n• ~50 requests/week across 2.5 weeks of intake data (51 rows)\n• 10 contractors across 5 trade types\n• Known issues: missed requests, delayed assignments, duplicate submissions, inconsistent categorization"
+    },
+    "3_goal": {
+      "title": "Goal / Target Condition",
+      "subtitle": "What does 'done' look like? Be specific and measurable.",
+      "content": "Reduce manual processing time from 6–8 hours/week to under 30 minutes/week by automating the full triage pipeline.\n\nTarget: 90%+ of requests classified, matched, and logged without human intervention.\n\nTimeline: Working prototype by end of Week 2, validated against all 51 rows of historical data.\n\nSuccess metric: Staff time saved per week, measured by comparing pre/post hours logged on this task."
+    },
+    "4_root_cause": {
+      "title": "Root Cause Analysis",
+      "subtitle": "Why does the problem exist? Ask 'why' five times.",
+      "content": "Why does triage take 6–8 hours?\n→ Because every request is read and categorized manually\n\nWhy is it done manually?\n→ Because urgency and trade type aren't structured — they're buried in free-text descriptions\n\nWhy is the data unstructured?\n→ Because tenants submit via email with no standardized form\n\nWhy hasn't this been automated before?\n→ Because extracting urgency/trade from natural language required AI capabilities that weren't previously accessible\n\nRoot cause: The core bottleneck is the classification step — converting unstructured tenant language into structured urgency + trade type categories. Everything downstream (matching, notification, logging) is mechanical once classification is done."
+    },
+    "5_countermeasures": {
+      "title": "Countermeasures / Proposed Solution",
+      "subtitle": "What are you building? How does it address the root cause?",
+      "content": "An n8n workflow that automates the full pipeline end-to-end:\n\n1. READ — Pull incoming requests from the Maintenance Inbox (Google Sheets)\n2. CLASSIFY — Use Claude API (HTTP Request node) to extract urgency, trade type, and reasoning from free-text\n3. MATCH — Look up the correct contractor from the directory based on trade + urgency tier\n4. NOTIFY — Construct a notification payload for the assigned contractor\n5. LOG — Write every outcome (completed, skipped, errored) to the Output Log\n\nThis directly addresses the root cause by replacing manual classification with AI-powered extraction.\n\nEdge case handling: duplicates detected and flagged, missing data logged as errors, non-English requests processed."
+    },
+    "6_implementation": {
+      "title": "Implementation Plan",
+      "subtitle": "Milestones, owners, and dates. Who does what by when?",
+      "content": "Week 1:\n• Day 1–2: Set up n8n environment, connect to data sheets\n• Day 3–4: Build and test HTTP Request node + Claude API integration\n• Day 5: Parse API response, build contractor matching logic\n\nWeek 2:\n• Day 1–2: Add error handling, duplicate detection, edge case branches\n• Day 3: Run full workflow against all 51 rows, validate output\n• Day 4: Record video walkthrough, write ROI note\n• Day 5: Submit all 4 components\n\nDependencies: Anthropic API key (provided), Google account for output sheet, n8n cloud trial"
+    },
+    "7_followup": {
+      "title": "Follow-Up & Verification",
+      "subtitle": "Did it work? What did you learn? What's next?",
+      "content": "Metrics to track:\n• Classification accuracy (% matching manual review)\n• Processing time per request (target: seconds vs. minutes)\n• Error rate on edge cases\n\nBefore: 6–8 hrs/week manual processing\nAfter: [To be measured post-implementation]\n\nNext steps if successful:\n• Deploy on live email intake (not just spreadsheet)\n• Add Slack/email notifications to contractors\n• Expand to other request types across Patry's portfolio"
+    }
+  },
+  "roi": {
+    "revenue_impact": "",
+    "cost_savings": "$18,000/year",
+    "hours_saved": "6-8 hrs/week → < 30 min/week",
+    "capacity_impact": "50 → 500+ requests/week"
+  }
+}

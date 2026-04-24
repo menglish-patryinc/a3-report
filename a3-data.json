@@ -1,0 +1,52 @@
+{
+  "project_title": "",
+  "owner": "",
+  "division": "",
+  "date": "",
+  "status": "proposal",
+
+  "roi": {
+    "revenue_impact": "",
+    "cost_savings": "",
+    "hours_saved": "",
+    "capacity_impact": ""
+  },
+
+  "sections": {
+    "1_background": {
+      "title": "Background / Context",
+      "subtitle": "Why does this project exist? Who is affected?",
+      "content": ""
+    },
+    "2_current_condition": {
+      "title": "Current Condition",
+      "subtitle": "How does the process work today? Use data, not opinions.",
+      "content": ""
+    },
+    "3_goal": {
+      "title": "Goal / Target Condition",
+      "subtitle": "What does 'done' look like? Be specific and measurable.",
+      "content": ""
+    },
+    "4_root_cause": {
+      "title": "Root Cause Analysis",
+      "subtitle": "Why does the problem exist? Ask 'why' five times.",
+      "content": ""
+    },
+    "5_countermeasures": {
+      "title": "Countermeasures / Proposed Solution",
+      "subtitle": "What are you building? How does it address the root cause?",
+      "content": ""
+    },
+    "6_implementation": {
+      "title": "Implementation Plan",
+      "subtitle": "Milestones, owners, and dates. Who does what by when?",
+      "content": ""
+    },
+    "7_followup": {
+      "title": "Follow-Up & Verification",
+      "subtitle": "Did it work? What did you learn? What's next?",
+      "content": ""
+    }
+  }
+}
