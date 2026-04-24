@@ -120,9 +120,9 @@ var PLACEHOLDERS = {
 var STATUS_CLASSES = {proposal:"active-proposal", in_progress:"active-in_progress", complete:"active-complete"};
 var STATUS_LABELS = {proposal:"Proposal", in_progress:"In Progress", complete:"Complete"};
 var presentMode = false;
-
+ 
 var INLINE_DATA = {"project_title": "", "owner": "", "division": "", "date": "", "status": "proposal", "roi": {"revenue_impact": "", "cost_savings": "", "hours_saved": "", "capacity_impact": ""}, "sections": {"1_background": {"title": "Background / Context", "subtitle": "Why does this project exist? Who is affected?", "content": ""}, "2_current_condition": {"title": "Current Condition", "subtitle": "How does the process work today? Use data, not opinions.", "content": ""}, "3_goal": {"title": "Goal / Target Condition", "subtitle": "What does 'done' look like? Be specific and measurable.", "content": ""}, "4_root_cause": {"title": "Root Cause Analysis", "subtitle": "Why does the problem exist? Ask 'why' five times.", "content": ""}, "5_countermeasures": {"title": "Countermeasures / Proposed Solution", "subtitle": "What are you building? How does it address the root cause?", "content": ""}, "6_implementation": {"title": "Implementation Plan", "subtitle": "Milestones, owners, and dates. Who does what by when?", "content": ""}, "7_followup": {"title": "Follow-Up & Verification", "subtitle": "Did it work? What did you learn? What's next?", "content": ""}}};
-
+ 
 function togglePresent() {
   presentMode = !presentMode;
   document.getElementById("toolbar").style.display = presentMode ? "none" : "flex";
@@ -130,13 +130,13 @@ function togglePresent() {
   document.getElementById("header").classList.toggle("present", presentMode);
   document.getElementById("content").classList.toggle("present", presentMode);
 }
-
+ 
 function escapeHtml(str) {
   var d = document.createElement("div");
   d.appendChild(document.createTextNode(str));
   return d.innerHTML;
 }
-
+ 
 function renderMeta(data) {
   var grid = document.getElementById("metaGrid");
   var fields = [
@@ -163,7 +163,7 @@ function renderMeta(data) {
   h += '<\/div>';
   grid.innerHTML = h;
 }
-
+ 
 function renderCard(key, sec) {
   var num = key.split("_")[0];
   var hasContent = sec.content && sec.content.trim().length > 0;
@@ -182,7 +182,7 @@ function renderCard(key, sec) {
       '<div class="card-dot' + dotClass + '"><\/div>' +
     '<\/div>' + bodyHtml + '<\/div>';
 }
-
+ 
 function renderSections(data) {
   var left = document.getElementById("colLeft");
   var right = document.getElementById("colRight");
@@ -191,7 +191,7 @@ function renderSections(data) {
   SECTIONS_LEFT.forEach(function(k) { if (data.sections[k]) left.innerHTML += renderCard(k, data.sections[k]); });
   SECTIONS_RIGHT.forEach(function(k) { if (data.sections[k]) right.innerHTML += renderCard(k, data.sections[k]); });
 }
-
+ 
 function updateProgress(data) {
   var sectionKeys = SECTIONS_LEFT.concat(SECTIONS_RIGHT);
   var filledSections = sectionKeys.filter(function(k) { return data.sections[k] && data.sections[k].content && data.sections[k].content.trim().length > 0; }).length;
@@ -202,7 +202,7 @@ function updateProgress(data) {
   if (pct === 100) fill.classList.add("complete"); else fill.classList.remove("complete");
   document.getElementById("progressPct").textContent = pct + "%";
 }
-
+ 
 function renderROI(data) {
   var grid = document.getElementById("roiGrid");
   var roi = data.roi || {};
@@ -223,7 +223,7 @@ function renderROI(data) {
   });
   grid.innerHTML = h;
 }
-
+ 
 function renderAll(data) {
   document.title = (data.project_title || "A3 Report") + " \u2014 Patry AI Fellowship";
   renderMeta(data);
@@ -231,7 +231,7 @@ function renderAll(data) {
   renderSections(data);
   updateProgress(data);
 }
-
+ 
 // Load data: use fetch when hosted, inline data when opened from file://
 if (window.location.protocol === "file:") {
   renderAll(INLINE_DATA);
@@ -241,6 +241,6 @@ if (window.location.protocol === "file:") {
     .then(function(data) { renderAll(data); })
     .catch(function() { renderAll(INLINE_DATA); });
 }
-<\/script>
+</script>
 </body>
 </html>
