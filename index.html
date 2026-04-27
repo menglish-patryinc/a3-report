@@ -8,7 +8,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#FFFFFF}
 body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webkit-font-smoothing:antialiased}
-
+ 
 /* ---------- Toolbar (sticky, dark) ---------- */
 .toolbar{position:sticky;top:0;z-index:100;background:#1A1A1A;padding:10px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .toolbar-left{display:flex;align-items:center;gap:18px}
@@ -22,7 +22,7 @@ body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webk
 .progress-fill{height:100%;background:#FFFFFF;transition:width .4s ease}
 .progress-fill.complete{background:#FFFFFF}
 .progress-pct{color:#FFFFFF;font-family:'Arial Black','Arial',sans-serif;font-size:11px;letter-spacing:1px}
-
+ 
 /* ---------- Header (cover style) ---------- */
 .header{background:#1A1A1A;padding:48px 32px 40px}
 .header-inner{max-width:1400px;margin:0 auto}
@@ -31,31 +31,31 @@ body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webk
 .header .lede{font-size:16px;color:#BFBFBF;line-height:1.5;max-width:780px}
 .header-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);margin-top:36px;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
 .meta-cell{background:#1A1A1A;padding:14px 18px}
-.meta-cell .label{font-size:9px;color:#6B6B6B;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.meta-cell .label{font-size:9px;color:#BFBFBF;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
 .meta-cell .value{font-size:14px;color:#FFFFFF;font-weight:700;line-height:1.3;min-height:18px}
-.meta-cell .value.empty{color:#6B6B6B;font-weight:400;font-style:italic}
+.meta-cell .value.empty{color:#9A9A9A;font-weight:400;font-style:italic}
 .status-row{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:18px 0 0}
 .status-row .label{font-size:10px;color:#BFBFBF;font-weight:700;letter-spacing:2px;text-transform:uppercase}
 .status-btn{padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:transparent;color:#6B6B6B;border:1px solid #2B2B2B}
 .status-btn.active{background:#FFFFFF;color:#1A1A1A;border-color:#FFFFFF}
-
+ 
 /* ---------- ROI band ---------- */
-.roi-band{background:#FFFFFF;border-bottom:2px solid #E5E5E5}
+.roi-band{background:#FFFFFF;border-bottom:1px solid #E5E5E5}
 .roi-inner{max-width:1400px;margin:0 auto;padding:36px 32px}
-.roi-kicker{font-size:10px;color:#6B6B6B;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
-.roi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:2px solid #E5E5E5}
+.roi-kicker{font-size:10px;color:#6B6B6B;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.roi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:1px solid #E5E5E5}
 .roi-card{padding:14px 24px;border-right:1px solid #E5E5E5}
-.roi-card .roi-card-label{font-size:9px;color:#6B6B6B;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.roi-card .roi-card-label{font-size:9px;color:#6B6B6B;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
 .roi-card .roi-card-value{font-family:'Arial Black','Arial',sans-serif;font-size:28px;font-weight:900;color:#2B2B2B;line-height:1.1;letter-spacing:-.5px}
 .roi-card .roi-card-value.empty{font-family:Arial,sans-serif;font-size:13px;font-weight:400;color:#BFBFBF;font-style:italic;letter-spacing:0}
-
+ 
 /* ---------- Content columns ---------- */
 .content{max-width:1400px;margin:0 auto;padding:48px 32px 64px}
 .col-headers{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:24px}
 .col-header{font-size:10px;font-weight:700;color:#6B6B6B;letter-spacing:3px;text-transform:uppercase;padding:0 0 14px;border-bottom:1px solid #2B2B2B}
 .columns{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;align-items:start}
 .column{display:flex;flex-direction:column;gap:24px}
-
+ 
 /* ---------- Card ---------- */
 .card{background:#FFFFFF;border:1px solid #E5E5E5}
 .card-header{display:flex;align-items:flex-start;gap:14px;padding:18px 22px;border-bottom:1px solid #E5E5E5;background:#FFFFFF}
@@ -69,14 +69,14 @@ body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webk
 .card-status.filled{background:#2B2B2B}
 .card-body{padding:20px 22px;font-size:14px;line-height:1.7;color:#2B2B2B;white-space:pre-wrap;min-height:80px}
 .card-body.placeholder{color:#BFBFBF;font-size:13px;line-height:1.7}
-
+ 
 /* ---------- Footer ---------- */
 .footer{background:#1A1A1A;padding:18px 32px;margin-top:0}
 .footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .footer-left{font-size:10px;color:#6B6B6B;font-weight:700;letter-spacing:2px;text-transform:uppercase}
 .footer-left .sep{color:#2B2B2B;margin:0 12px}
 .footer-right{font-size:10px;color:#BFBFBF;font-weight:400;letter-spacing:1px}
-
+ 
 @media (max-width:900px){
   .header h1{font-size:32px}
   .header-meta{grid-template-columns:repeat(2,1fr)}
@@ -87,7 +87,7 @@ body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webk
 </style>
 </head>
 <body>
-
+ 
 <div class="toolbar" id="toolbar">
   <div class="toolbar-left">
     <div class="brand">
@@ -101,7 +101,7 @@ body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webk
     <span class="progress-pct" id="progressPct">0%</span>
   </div>
 </div>
-
+ 
 <div class="header" id="header">
   <div class="header-inner">
     <div class="header-kicker">A3 Problem-Solving Report</div>
@@ -111,14 +111,14 @@ body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webk
     <div class="status-row" id="statusRow"></div>
   </div>
 </div>
-
+ 
 <div class="roi-band">
   <div class="roi-inner">
     <div class="roi-kicker">ROI Estimate</div>
     <div class="roi-grid" id="roiGrid"></div>
   </div>
 </div>
-
+ 
 <div class="content" id="content">
   <div class="col-headers">
     <div class="col-header">Problem Understanding</div>
@@ -129,14 +129,14 @@ body{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#2B2B2B;-webk
     <div class="column" id="colRight"></div>
   </div>
 </div>
-
+ 
 <div class="footer">
   <div class="footer-inner">
     <span class="footer-left">A3 Report<span class="sep">|</span>AI Fellowship 2026<span class="sep">|</span>Continuous Improvement</span>
     <span class="footer-right">Patry Inc.</span>
   </div>
 </div>
-
+ 
 <script>
 var SECTIONS_LEFT = ["1_background","2_current_condition","3_goal","4_root_cause"];
 var SECTIONS_RIGHT = ["5_countermeasures","6_implementation","7_followup"];
@@ -150,20 +150,20 @@ var PLACEHOLDERS = {
   "7_followup": "What metrics will you track post-implementation?\nBefore vs. after comparison\nWhat worked? What didn\u2019t?\nLessons learned and next steps"
 };
 var STATUS_LABELS = {proposal:"Proposal", in_progress:"In Progress", complete:"Complete"};
-
+ 
 var INLINE_DATA = {"project_title": "", "owner": "", "division": "", "date": "", "status": "proposal", "roi": {"revenue_impact": "", "cost_savings": "", "hours_saved": "", "capacity_impact": ""}, "sections": {"1_background": {"title": "Background / Context", "subtitle": "Why does this project exist? Who is affected?", "content": ""}, "2_current_condition": {"title": "Current Condition", "subtitle": "How does the process work today? Use data, not opinions.", "content": ""}, "3_goal": {"title": "Goal / Target Condition", "subtitle": "What does 'done' look like? Be specific and measurable.", "content": ""}, "4_root_cause": {"title": "Root Cause Analysis", "subtitle": "Why does the problem exist? Ask 'why' five times.", "content": ""}, "5_countermeasures": {"title": "Countermeasures / Proposed Solution", "subtitle": "What are you building? How does it address the root cause?", "content": ""}, "6_implementation": {"title": "Implementation Plan", "subtitle": "Milestones, owners, and dates. Who does what by when?", "content": ""}, "7_followup": {"title": "Follow-Up & Verification", "subtitle": "Did it work? What did you learn? What's next?", "content": ""}}};
-
+ 
 function escapeHtml(str) {
   var d = document.createElement("div");
   d.appendChild(document.createTextNode(str));
   return d.innerHTML;
 }
-
+ 
 function renderHeader(data) {
   var titleEl = document.getElementById("headerTitle");
   titleEl.textContent = data.project_title || "[Project title.]";
 }
-
+ 
 function renderMeta(data) {
   var grid = document.getElementById("metaGrid");
   var fields = [
@@ -184,7 +184,7 @@ function renderMeta(data) {
   });
   grid.innerHTML = h;
 }
-
+ 
 function renderStatus(data) {
   var row = document.getElementById("statusRow");
   var h = '<span class="label">Status</span>';
@@ -194,7 +194,7 @@ function renderStatus(data) {
   });
   row.innerHTML = h;
 }
-
+ 
 function renderCard(key, sec) {
   var num = key.split("_")[0];
   var hasContent = sec.content && sec.content.trim().length > 0;
@@ -217,7 +217,7 @@ function renderCard(key, sec) {
       '<div class="card-status' + dotClass + '"></div>' +
     '</div>' + bodyHtml + '</div>';
 }
-
+ 
 function renderSections(data) {
   var left = document.getElementById("colLeft");
   var right = document.getElementById("colRight");
@@ -226,7 +226,7 @@ function renderSections(data) {
   SECTIONS_LEFT.forEach(function(k) { if (data.sections[k]) left.innerHTML += renderCard(k, data.sections[k]); });
   SECTIONS_RIGHT.forEach(function(k) { if (data.sections[k]) right.innerHTML += renderCard(k, data.sections[k]); });
 }
-
+ 
 function updateProgress(data) {
   var sectionKeys = SECTIONS_LEFT.concat(SECTIONS_RIGHT);
   var filledSections = sectionKeys.filter(function(k) { return data.sections[k] && data.sections[k].content && data.sections[k].content.trim().length > 0; }).length;
@@ -237,7 +237,7 @@ function updateProgress(data) {
   if (pct === 100) fill.classList.add("complete"); else fill.classList.remove("complete");
   document.getElementById("progressPct").textContent = pct + "%";
 }
-
+ 
 function renderROI(data) {
   var grid = document.getElementById("roiGrid");
   var roi = data.roi || {};
@@ -258,7 +258,7 @@ function renderROI(data) {
   });
   grid.innerHTML = h;
 }
-
+ 
 function renderAll(data) {
   document.title = (data.project_title || "A3 Report") + " | Patry AI Fellowship";
   renderHeader(data);
@@ -268,7 +268,7 @@ function renderAll(data) {
   renderSections(data);
   updateProgress(data);
 }
-
+ 
 // Load data: use fetch when hosted, inline data when opened from file://
 if (window.location.protocol === "file:") {
   renderAll(INLINE_DATA);
