@@ -15,16 +15,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F5F2ED;color:#1A326
 .progress-fill{height:100%;border-radius:3px;background:#FAB95B;transition:width .4s ease}
 .progress-fill.complete{background:#2E7D4F}
 .progress-pct{color:rgba(255,255,255,.6);font-size:10px}
-.btn{border:none;border-radius:6px;padding:5px 16px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit}
-.btn-present{background:#FAB95B;color:#1A3263}
-.btn-exit{position:fixed;top:12px;right:16px;z-index:200;background:#1A3263;color:#FAB95B;border-radius:8px;padding:8px 18px;font-size:12px;box-shadow:0 4px 20px rgba(0,0,0,.25);display:none}
-.btn-exit.active{display:block}
 .header{background:#1A3263;padding:22px 32px 16px;border-bottom:4px solid #FAB95B}
-.header.present{padding:28px 40px 20px}
 .header-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
 .header-label{font-size:10px;color:#FAB95B;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
 .header h1{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.5px}
-.header.present h1{font-size:26px}
 .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
 .meta-field-label{font-size:10px;color:#FAB95B;font-weight:600;margin-bottom:2px}
 .meta-field-value{font-size:13px;color:#fff;font-weight:600;min-height:22px;padding:2px 0}
@@ -37,7 +31,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F5F2ED;color:#1A326
 .status-btn.active-in_progress{background:#FAB95B;color:#1A3263;border:none;font-weight:700}
 .status-btn.active-complete{background:#2E7D4F;color:#fff;border:none;font-weight:700}
 .content{max-width:1400px;margin:0 auto;padding:16px 24px 40px}
-.content.present{padding:20px 40px 40px}
 .col-headers{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:12px}
 .col-header{font-size:11px;font-weight:700;color:#547792;letter-spacing:3px;text-transform:uppercase;padding:8px 0;border-bottom:2px solid #D4CFCA}
 .columns{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;align-items:start}
@@ -73,11 +66,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F5F2ED;color:#1A326
       <span class="progress-pct" id="progressPct">0%</span>
     </div>
   </div>
-  <div style="display:flex;gap:8px">
-    <button class="btn btn-present" onclick="togglePresent()">&#9654; Present</button>
-  </div>
 </div>
-<button class="btn btn-exit" id="btnExit" onclick="togglePresent()">&#10005; Exit Presentation</button>
 <div class="header" id="header">
   <div class="header-inner">
     <div>
@@ -119,17 +108,8 @@ var PLACEHOLDERS = {
 };
 var STATUS_CLASSES = {proposal:"active-proposal", in_progress:"active-in_progress", complete:"active-complete"};
 var STATUS_LABELS = {proposal:"Proposal", in_progress:"In Progress", complete:"Complete"};
-var presentMode = false;
- 
+
 var INLINE_DATA = {"project_title": "", "owner": "", "division": "", "date": "", "status": "proposal", "roi": {"revenue_impact": "", "cost_savings": "", "hours_saved": "", "capacity_impact": ""}, "sections": {"1_background": {"title": "Background / Context", "subtitle": "Why does this project exist? Who is affected?", "content": ""}, "2_current_condition": {"title": "Current Condition", "subtitle": "How does the process work today? Use data, not opinions.", "content": ""}, "3_goal": {"title": "Goal / Target Condition", "subtitle": "What does 'done' look like? Be specific and measurable.", "content": ""}, "4_root_cause": {"title": "Root Cause Analysis", "subtitle": "Why does the problem exist? Ask 'why' five times.", "content": ""}, "5_countermeasures": {"title": "Countermeasures / Proposed Solution", "subtitle": "What are you building? How does it address the root cause?", "content": ""}, "6_implementation": {"title": "Implementation Plan", "subtitle": "Milestones, owners, and dates. Who does what by when?", "content": ""}, "7_followup": {"title": "Follow-Up & Verification", "subtitle": "Did it work? What did you learn? What's next?", "content": ""}}};
- 
-function togglePresent() {
-  presentMode = !presentMode;
-  document.getElementById("toolbar").style.display = presentMode ? "none" : "flex";
-  document.getElementById("btnExit").classList.toggle("active", presentMode);
-  document.getElementById("header").classList.toggle("present", presentMode);
-  document.getElementById("content").classList.toggle("present", presentMode);
-}
  
 function escapeHtml(str) {
   var d = document.createElement("div");
